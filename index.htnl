@@ -28,8 +28,12 @@
       padding: 35px 8%;
       position: relative;
       overflow: hidden;
-      background:
-        radial-gradient(ellipse at 50% 40%, #222 0%, #101010 45%, #080808 80%);
+      background: radial-gradient(
+        ellipse at 50% 40%,
+        #222 0%,
+        #101010 45%,
+        #080808 80%
+      );
     }
 
     header {
@@ -90,7 +94,7 @@
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 14px;
       max-width: 950px;
       margin: 0 auto;
@@ -217,6 +221,7 @@
       0%, 100% {
         transform: translateY(0);
       }
+
       50% {
         transform: translateY(-12px);
       }
@@ -236,7 +241,7 @@
       }
 
       .cards {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .card {
@@ -262,7 +267,6 @@
 
 <body>
   <section class="hero" id="hero">
-
     <header>
       <div class="logo">ITZ <span>FIZZ</span></div>
       <div class="menu">SCROLL EXPERIENCE</div>
@@ -315,6 +319,7 @@
 
   <section class="second-section">
     <h2>FEEL THE <span>SPEED</span></h2>
+
     <p>
       Innovation meets imagination. Explore a digital experience
       built with creativity, motion and modern web technology.
