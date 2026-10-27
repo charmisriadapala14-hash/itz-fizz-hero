@@ -1,38 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ITZ FIZZ - Scroll Hero</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-</head>
-<body class="bg-[#fdf8ee]">
-  <div class="scroll-wrapper">
-    <section id="hero">
-      <div class="top-content">
-        <h1 id="headline"></h1>
-        <p id="progress">Scroll — 0%</p>
-      </div>
+  <meta name="description" content="A creative scroll-driven hero website built with HTML, CSS and JavaScript.">
 
-      <div class="track-area">
-        <div class="track-bg"><div id="trail"></div></div>
-        <div id="car">
-          <div class="wheel left"></div>
-          <div class="wheel right"></div>
-        </div>
-      </div>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ITZ FIZZ - Scroll Hero",
+    "url": "https://charmisriadapala14-hash.github.io/itz-fizz-hero/",
+    "description": "A creative scroll-driven hero website built with HTML, CSS and JavaScript."
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section class="hero" id="hero">
+    <div class="content">
+      <p class="small-text">DISCOVER THE EXPERIENCE</p>
+      <h1>ITZ FIZZ</h1>
 
       <div class="stats">
-        <div class="card"><h2>58%</h2><p>User Activity</p></div>
-        <div class="card"><h2>23%</h2><p>Click Rate</p></div>
-        <div class="card dark"><h2>27%</h2><p>Conversion</p></div>
-        <div class="card green"><h2>100%</h2><p>Scroll Linked</p></div>
+        <div class="stat">
+          <h2>01</h2>
+          <p>Creative Design</p>
+        </div>
+        <div class="stat">
+          <h2>02</h2>
+          <p>Smooth Animation</p>
+        </div>
+        <div class="stat">
+          <h2>03</h2>
+          <p>Modern Experience</p>
+        </div>
+        <div class="stat">
+          <h2>04</h2>
+          <p>Responsive Layout</p>
+        </div>
       </div>
-    </section>
-  </div>
+    </div>
+
+    <div class="car">🏎️</div>
+    <p class="scroll-text">SCROLL TO EXPLORE ↓</p>
+  </section>
+
+  <section class="second-section">
+    <h2>Feel the Speed.</h2>
+    <p>Explore a creative web experience with animated elements and a modern design.</p>
+  </section>
+
   <script src="script.js"></script>
 </body>
 </html>
