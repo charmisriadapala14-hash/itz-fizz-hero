@@ -3,27 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>ITZ FIZZ - Scroll Hero</title>
-
-  <meta name="description"
-        content="A creative scroll-driven hero website with animations and a modern design.">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "ITZ FIZZ - Scroll Hero",
-    "url": "https://charmisriadapala14-hash.github.io/itz-fizz-hero/",
-    "description": "A creative scroll-driven hero website with animations and a modern design."
-  }
-  </script>
+  <title>ITZ FIZZ | Scroll Hero</title>
 
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -31,356 +17,314 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #05070c;
+      background: #080808;
       color: white;
+      font-family: Arial, Helvetica, sans-serif;
       overflow-x: hidden;
     }
 
     .hero {
       min-height: 100vh;
+      padding: 35px 8%;
       position: relative;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 20px 100px;
       background:
-        radial-gradient(ellipse at center, #12243b 0%, #080d17 45%, #020306 100%);
+        radial-gradient(ellipse at 50% 40%, #222 0%, #101010 45%, #080808 80%);
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 350px;
-      height: 350px;
-      background: #087dff;
-      filter: blur(150px);
-      opacity: 0.18;
-      top: 25%;
-      left: 35%;
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .logo span,
+    h1 span {
+      color: #c6ff00;
+    }
+
+    .menu {
+      border: 1px solid #555;
+      padding: 10px 18px;
+      border-radius: 25px;
+      color: #ddd;
+      font-size: 12px;
+      letter-spacing: 2px;
     }
 
     .content {
-      width: 100%;
-      max-width: 1100px;
+      text-align: center;
+      padding-top: 70px;
       position: relative;
       z-index: 2;
     }
 
     .small-text {
-      color: #b9d8ff;
+      color: #c6ff00;
       font-size: 12px;
       letter-spacing: 5px;
-      animation: fadeUp 1s forwards;
+      margin-bottom: 20px;
     }
 
     h1 {
-      margin-top: 25px;
-      margin-bottom: 45px;
-      font-size: clamp(48px, 10vw, 105px);
-      line-height: 1;
-      letter-spacing: 6px;
+      font-size: clamp(60px, 12vw, 150px);
+      line-height: 0.95;
       font-weight: 900;
-      animation: fadeUp 1s 0.2s both;
+      letter-spacing: -5px;
     }
 
-    h1 span {
-      background: linear-gradient(90deg, #00d9ff, #477bff, #d52cff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    .description {
+      color: #aaa;
+      margin: 25px auto 35px;
+      max-width: 450px;
+      line-height: 1.8;
+      font-size: 14px;
     }
 
-    .stats {
+    .cards {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
+      gap: 14px;
+      max-width: 950px;
       margin: 0 auto;
+      text-align: left;
     }
 
-    .stat {
-      padding: 25px 12px;
-      min-height: 135px;
-      border: 1px solid rgba(80, 170, 255, 0.3);
+    .card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid #333;
       border-radius: 14px;
-      background: rgba(255, 255, 255, 0.045);
-      backdrop-filter: blur(8px);
-      animation: fadeUp 0.8s both;
-      transition: transform 0.3s, border-color 0.3s;
+      padding: 22px 16px;
+      min-height: 125px;
+      transition: 0.3s;
     }
 
-    .stat:hover {
-      transform: translateY(-8px);
-      border-color: #00c8ff;
+    .card:hover {
+      border-color: #c6ff00;
+      transform: translateY(-6px);
+      background: rgba(198, 255, 0, 0.06);
     }
 
-    .stat h2 {
-      font-size: 30px;
-      margin-bottom: 18px;
-      color: #32baff;
+    .card .number {
+      color: #c6ff00;
+      font-size: 12px;
+      margin-bottom: 16px;
     }
 
-    .stat p {
-      font-size: 14px;
-      color: #e5eaf5;
-      line-height: 1.5;
+    .card h3 {
+      font-size: 15px;
+      margin-bottom: 8px;
     }
 
-    .stat:nth-child(1) {
-      animation-delay: 0.3s;
+    .card p {
+      color: #999;
+      font-size: 12px;
+      line-height: 1.6;
     }
 
-    .stat:nth-child(2) {
-      animation-delay: 0.5s;
+    .car-area {
+      position: relative;
+      height: 180px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 15px;
     }
 
-    .stat:nth-child(3) {
-      animation-delay: 0.7s;
-    }
-
-    .stat:nth-child(4) {
-      animation-delay: 0.9s;
+    .glow {
+      position: absolute;
+      width: 65%;
+      height: 45px;
+      background: #c6ff00;
+      filter: blur(70px);
+      opacity: 0.4;
     }
 
     .car {
-      display: block;
-      font-size: clamp(75px, 12vw, 120px);
-      margin-top: 30px;
-      filter: drop-shadow(0 0 20px rgba(0, 150, 255, 0.65));
-      transition: transform 0.2s ease-out;
-    }
-
-    .scroll-text {
-      margin-top: 20px;
-      font-size: 11px;
-      letter-spacing: 4px;
-      color: #b9d8ff;
-      animation: pulse 2s infinite;
-    }
-
-    .arrow {
-      display: block;
-      margin-top: 12px;
-      font-size: 25px;
-    }
-
-    .second-section {
-      min-height: 100vh;
-      padding: 80px 8%;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      background:
-        radial-gradient(ellipse at right, #102a4a 0%, #080d17 45%, #020306 100%);
-      border-top: 1px solid #16324f;
-    }
-
-    .second-content {
-      flex: 1 1 300px;
-    }
-
-    .second-section h2 {
-      font-size: clamp(40px, 7vw, 75px);
-      margin-bottom: 25px;
-      line-height: 1.1;
-    }
-
-    .second-section h2 span {
-      color: #21baff;
-    }
-
-    .second-section p {
-      max-width: 550px;
-      color: #c0cada;
-      font-size: 17px;
-      line-height: 1.8;
-    }
-
-    .second-car {
-      flex: 1 1 250px;
-      text-align: center;
-      font-size: clamp(100px, 20vw, 200px);
-      filter: drop-shadow(0 0 30px rgba(0, 130, 255, 0.4));
+      position: relative;
+      font-size: clamp(90px, 17vw, 160px);
+      filter: drop-shadow(0 15px 20px rgba(198, 255, 0, 0.15));
       animation: float 3s ease-in-out infinite;
     }
 
-    footer {
-      padding: 25px 15px;
+    .scroll-text {
+      color: #777;
       text-align: center;
-      background: #020306;
-      color: #78879b;
+      font-size: 10px;
+      letter-spacing: 4px;
+      margin-top: 10px;
+    }
+
+    .second-section {
+      min-height: 70vh;
+      padding: 100px 20px;
+      text-align: center;
+      background: linear-gradient(#080808, #151515);
+    }
+
+    .second-section h2 {
+      font-size: clamp(35px, 7vw, 75px);
+      margin-bottom: 20px;
+    }
+
+    .second-section h2 span {
+      color: #c6ff00;
+    }
+
+    .second-section p {
+      color: #aaa;
+      max-width: 500px;
+      margin: auto;
+      line-height: 1.8;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      background: #c6ff00;
+      color: #080808;
+      padding: 14px 25px;
+      border-radius: 30px;
+      text-decoration: none;
       font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s;
     }
 
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(25px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .button:hover {
+      background: white;
+      transform: scale(1.05);
     }
 
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 0.5;
-      }
-
-      50% {
-        opacity: 1;
-      }
+    footer {
+      padding: 25px;
+      text-align: center;
+      background: #080808;
+      color: #666;
+      font-size: 11px;
+      letter-spacing: 2px;
     }
 
     @keyframes float {
       0%, 100% {
         transform: translateY(0);
       }
-
       50% {
-        transform: translateY(-15px);
+        transform: translateY(-12px);
       }
     }
 
     @media (max-width: 700px) {
       .hero {
-        padding: 70px 18px 60px;
+        padding: 25px 5%;
+      }
+
+      .content {
+        padding-top: 65px;
       }
 
       h1 {
-        letter-spacing: 3px;
-        margin-bottom: 30px;
+        letter-spacing: -3px;
       }
 
-      .stats {
+      .cards {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
       }
 
-      .stat {
-        padding: 20px 8px;
-        min-height: 120px;
+      .card {
+        padding: 17px 12px;
       }
 
-      .stat h2 {
-        font-size: 25px;
+      .car-area {
+        height: 140px;
       }
 
-      .stat p {
-        font-size: 12px;
-      }
-
-      .second-section {
-        text-align: center;
-        padding: 65px 22px;
-      }
-
-      .second-section p {
-        font-size: 15px;
+      .description {
+        font-size: 13px;
       }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
+    @media (max-width: 350px) {
+      .cards {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 
 <body>
-
   <section class="hero" id="hero">
-    <div class="content">
 
-      <p class="small-text">DISCOVER THE EXPERIENCE</p>
+    <header>
+      <div class="logo">ITZ <span>FIZZ</span></div>
+      <div class="menu">SCROLL EXPERIENCE</div>
+    </header>
+
+    <main class="content">
+      <p class="small-text">WELCOME TO THE FUTURE</p>
 
       <h1>ITZ <span>FIZZ</span></h1>
 
-      <div class="stats">
-
-        <div class="stat">
-          <h2>01</h2>
-          <p>Creative Design</p>
-        </div>
-
-        <div class="stat">
-          <h2>02</h2>
-          <p>Smooth Animation</p>
-        </div>
-
-        <div class="stat">
-          <h2>03</h2>
-          <p>Modern Experience</p>
-        </div>
-
-        <div class="stat">
-          <h2>04</h2>
-          <p>Responsive Layout</p>
-        </div>
-
-      </div>
-
-      <div class="car" id="car">🏎️</div>
-
-      <p class="scroll-text">
-        SCROLL TO EXPLORE
-        <span class="arrow">↓</span>
+      <p class="description">
+        Experience a bold digital world where creative design,
+        smooth animation and modern technology come together.
       </p>
 
-    </div>
+      <div class="cards">
+        <article class="card">
+          <div class="number">01 / DESIGN</div>
+          <h3>Creative Design</h3>
+          <p>Bold visuals with a modern futuristic style.</p>
+        </article>
+
+        <article class="card">
+          <div class="number">02 / MOTION</div>
+          <h3>Smooth Animation</h3>
+          <p>Fluid movement for a better browsing experience.</p>
+        </article>
+
+        <article class="card">
+          <div class="number">03 / EXPERIENCE</div>
+          <h3>Modern Experience</h3>
+          <p>A clean layout designed to stand out.</p>
+        </article>
+
+        <article class="card">
+          <div class="number">04 / DEVICE</div>
+          <h3>Responsive Layout</h3>
+          <p>Designed for both mobile and desktop screens.</p>
+        </article>
+      </div>
+
+      <div class="car-area">
+        <div class="glow"></div>
+        <div class="car" aria-label="Sports car">🏎️</div>
+      </div>
+
+      <p class="scroll-text">↓ SCROLL TO EXPLORE ↓</p>
+    </main>
   </section>
 
   <section class="second-section">
+    <h2>FEEL THE <span>SPEED</span></h2>
+    <p>
+      Innovation meets imagination. Explore a digital experience
+      built with creativity, motion and modern web technology.
+    </p>
 
-    <div class="second-content">
-      <h2>Feel the <span>Speed.</span></h2>
-
-      <p>
-        Explore a creative web experience with animated elements
-        and a modern design. Enjoy a stylish interface designed
-        to bring speed, creativity and technology together.
-      </p>
-    </div>
-
-    <div class="second-car">🏎️</div>
-
+    <a class="button" href="#hero">BACK TO TOP ↑</a>
   </section>
 
   <footer>
-    ITZ FIZZ | Creative Scroll Hero Website
+    ITZ FIZZ · CREATIVE WEB EXPERIENCE
   </footer>
-
-  <script>
-    const car = document.getElementById("car");
-    const hero = document.getElementById("hero");
-
-    window.addEventListener("scroll", function () {
-      if (!car || !hero) return;
-
-      const heroHeight = hero.offsetHeight;
-      const heroTop = hero.getBoundingClientRect().top;
-
-      let progress = -heroTop / heroHeight;
-      progress = Math.max(0, Math.min(1, progress));
-
-      const moveX = progress * 100 - 50;
-      const rotate = progress * 8 - 4;
-
-      car.style.transform =
-        `translateX(${moveX}px) rotate(${rotate}deg)`;
-    });
-  </script>
-
 </body>
 </html>
