@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>ITZ FIZZ - Scroll Hero</title>
-  <meta name="description" content="A creative scroll-driven hero website built with HTML, CSS and JavaScript.">
+
+  <meta name="description"
+        content="A creative scroll-driven hero website with animations and a modern design.">
 
   <script type="application/ld+json">
   {
@@ -12,48 +15,372 @@
     "@type": "WebSite",
     "name": "ITZ FIZZ - Scroll Hero",
     "url": "https://charmisriadapala14-hash.github.io/itz-fizz-hero/",
-    "description": "A creative scroll-driven hero website built with HTML, CSS and JavaScript."
+    "description": "A creative scroll-driven hero website with animations and a modern design."
   }
   </script>
 
-  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #05070c;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px 100px;
+      background:
+        radial-gradient(ellipse at center, #12243b 0%, #080d17 45%, #020306 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      background: #087dff;
+      filter: blur(150px);
+      opacity: 0.18;
+      top: 25%;
+      left: 35%;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 1100px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .small-text {
+      color: #b9d8ff;
+      font-size: 12px;
+      letter-spacing: 5px;
+      animation: fadeUp 1s forwards;
+    }
+
+    h1 {
+      margin-top: 25px;
+      margin-bottom: 45px;
+      font-size: clamp(48px, 10vw, 105px);
+      line-height: 1;
+      letter-spacing: 6px;
+      font-weight: 900;
+      animation: fadeUp 1s 0.2s both;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, #00d9ff, #477bff, #d52cff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin: 0 auto;
+    }
+
+    .stat {
+      padding: 25px 12px;
+      min-height: 135px;
+      border: 1px solid rgba(80, 170, 255, 0.3);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.045);
+      backdrop-filter: blur(8px);
+      animation: fadeUp 0.8s both;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .stat:hover {
+      transform: translateY(-8px);
+      border-color: #00c8ff;
+    }
+
+    .stat h2 {
+      font-size: 30px;
+      margin-bottom: 18px;
+      color: #32baff;
+    }
+
+    .stat p {
+      font-size: 14px;
+      color: #e5eaf5;
+      line-height: 1.5;
+    }
+
+    .stat:nth-child(1) {
+      animation-delay: 0.3s;
+    }
+
+    .stat:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    .stat:nth-child(3) {
+      animation-delay: 0.7s;
+    }
+
+    .stat:nth-child(4) {
+      animation-delay: 0.9s;
+    }
+
+    .car {
+      display: block;
+      font-size: clamp(75px, 12vw, 120px);
+      margin-top: 30px;
+      filter: drop-shadow(0 0 20px rgba(0, 150, 255, 0.65));
+      transition: transform 0.2s ease-out;
+    }
+
+    .scroll-text {
+      margin-top: 20px;
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: #b9d8ff;
+      animation: pulse 2s infinite;
+    }
+
+    .arrow {
+      display: block;
+      margin-top: 12px;
+      font-size: 25px;
+    }
+
+    .second-section {
+      min-height: 100vh;
+      padding: 80px 8%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      background:
+        radial-gradient(ellipse at right, #102a4a 0%, #080d17 45%, #020306 100%);
+      border-top: 1px solid #16324f;
+    }
+
+    .second-content {
+      flex: 1 1 300px;
+    }
+
+    .second-section h2 {
+      font-size: clamp(40px, 7vw, 75px);
+      margin-bottom: 25px;
+      line-height: 1.1;
+    }
+
+    .second-section h2 span {
+      color: #21baff;
+    }
+
+    .second-section p {
+      max-width: 550px;
+      color: #c0cada;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .second-car {
+      flex: 1 1 250px;
+      text-align: center;
+      font-size: clamp(100px, 20vw, 200px);
+      filter: drop-shadow(0 0 30px rgba(0, 130, 255, 0.4));
+      animation: float 3s ease-in-out infinite;
+    }
+
+    footer {
+      padding: 25px 15px;
+      text-align: center;
+      background: #020306;
+      color: #78879b;
+      font-size: 12px;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.5;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding: 70px 18px 60px;
+      }
+
+      h1 {
+        letter-spacing: 3px;
+        margin-bottom: 30px;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .stat {
+        padding: 20px 8px;
+        min-height: 120px;
+      }
+
+      .stat h2 {
+        font-size: 25px;
+      }
+
+      .stat p {
+        font-size: 12px;
+      }
+
+      .second-section {
+        text-align: center;
+        padding: 65px 22px;
+      }
+
+      .second-section p {
+        font-size: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
   <section class="hero" id="hero">
     <div class="content">
+
       <p class="small-text">DISCOVER THE EXPERIENCE</p>
-      <h1>ITZ FIZZ</h1>
+
+      <h1>ITZ <span>FIZZ</span></h1>
 
       <div class="stats">
+
         <div class="stat">
           <h2>01</h2>
           <p>Creative Design</p>
         </div>
+
         <div class="stat">
           <h2>02</h2>
           <p>Smooth Animation</p>
         </div>
+
         <div class="stat">
           <h2>03</h2>
           <p>Modern Experience</p>
         </div>
+
         <div class="stat">
           <h2>04</h2>
           <p>Responsive Layout</p>
         </div>
-      </div>
-    </div>
 
-    <div class="car">🏎️</div>
-    <p class="scroll-text">SCROLL TO EXPLORE ↓</p>
+      </div>
+
+      <div class="car" id="car">🏎️</div>
+
+      <p class="scroll-text">
+        SCROLL TO EXPLORE
+        <span class="arrow">↓</span>
+      </p>
+
+    </div>
   </section>
 
   <section class="second-section">
-    <h2>Feel the Speed.</h2>
-    <p>Explore a creative web experience with animated elements and a modern design.</p>
+
+    <div class="second-content">
+      <h2>Feel the <span>Speed.</span></h2>
+
+      <p>
+        Explore a creative web experience with animated elements
+        and a modern design. Enjoy a stylish interface designed
+        to bring speed, creativity and technology together.
+      </p>
+    </div>
+
+    <div class="second-car">🏎️</div>
+
   </section>
 
-  <script src="script.js"></script>
+  <footer>
+    ITZ FIZZ | Creative Scroll Hero Website
+  </footer>
+
+  <script>
+    const car = document.getElementById("car");
+    const hero = document.getElementById("hero");
+
+    window.addEventListener("scroll", function () {
+      if (!car || !hero) return;
+
+      const heroHeight = hero.offsetHeight;
+      const heroTop = hero.getBoundingClientRect().top;
+
+      let progress = -heroTop / heroHeight;
+      progress = Math.max(0, Math.min(1, progress));
+
+      const moveX = progress * 100 - 50;
+      const rotate = progress * 8 - 4;
+
+      car.style.transform =
+        `translateX(${moveX}px) rotate(${rotate}deg)`;
+    });
+  </script>
+
 </body>
 </html>
